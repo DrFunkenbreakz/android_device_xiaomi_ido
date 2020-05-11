@@ -15,8 +15,8 @@
 
 $(call inherit-product, device/xiaomi/ido/full_ido.mk)
 
-# Inherit some common Mokee stuff.
-$(call inherit-product, vendor/mokee/config/common_full_phone.mk)
+# Inherit some common AOSP stuff.
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Must define platform variant before including any common things
 TARGET_BOARD_PLATFORM_VARIANT := msm8939
@@ -24,9 +24,19 @@ TARGET_BOARD_PLATFORM_VARIANT := msm8939
 # Assert
 TARGET_OTA_ASSERT_DEVICE := ido
 
-PRODUCT_NAME := mokee_ido
+# Inherit some common Evolution X stuff.
+CUSTOM_BUILD_TYPE := UNOFFICIAL
+TARGET_BOOT_ANIMATION_RES := 720
+TARGET_GAPPS_ARCH := arm64
+TARGET_SUPPORTS_GOOGLE_RECORDER := false
+PRODUCT_NAME := aosp_ido
 BOARD_VENDOR := xiaomi
 PRODUCT_DEVICE := ido
+
+PRODUCT_BRAND := Xiaomi
+PRODUCT_MODEL := Redmi 3
+PRODUCT_MANUFACTURER := Xiaomi
+TARGET_VENDOR := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
